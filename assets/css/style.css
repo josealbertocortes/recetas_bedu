@@ -1,0 +1,109 @@
+html {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+footer {
+  background-color: #f39b17;
+  width: 100%;
+  color: white;
+  margin: 0;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  text-align: center;
+}
+
+.fa-magnifying-glass {
+  color: #7a3300;
+}
+
+.fa-utensils {
+  color: rgba(255, 255, 255, 1);
+}
+
+.titulo__recetas {
+  color: #7a3300;
+}
+
+.navbar__recetas {
+  height: 150px;
+  background-color: #f39b17;
+}
+
+.input__recetas {
+  border-radius: 10px;
+  height: 40px;
+  border: 1px solid #F4B95F;
+}
+
+.input__recetas::placeholder {
+  color: #7a3300;
+  opacity: 1;
+}
+
+.containter__input {
+  position: relative;
+}
+
+.boton__search__recetas {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border-radius: 0px;
+  border: 0px;
+  outline: 0px;
+  background: none;
+}
+
+.boton__search__random{
+ border: none;
+ margin: 0;
+ padding: 0;
+ outline: 0;
+ border: 1px solid #7a3300;
+ border-radius: 10px;
+ padding:0px 15px;
+ background-color: #F4B95F;
+ color: #7a3300;;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #fff;
+}
+
+.derechos__reservados {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.text_card_image {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 576px) {
+  .navbar__recetas {
+    height: auto;
+    background-color: #f39b17;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .boton__search__recetas {
+    display: none;
+  }
+}
