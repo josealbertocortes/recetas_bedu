@@ -24,8 +24,8 @@
                 <h1 class="text-center titulo__recetas" >Recetas</h1>
                 <div class="d-flex justify-content-center w-100">
                     <div class="w-50 containter__input">
-                        <input class="w-100 ms-2 input__recetas text-center" placeholder="¿Qué quieres cocinar hoy?" >
-                        <p class="boton__search__recetas" ><i class="fa-solid fa-magnifying-glass"></i></p>
+                        <input id="inputSearch" class="w-100 ms-2 input__recetas text-center" placeholder="¿Qué quieres cocinar hoy?" >
+                        <p id="btnSearch" class="boton__search__recetas" ><i class="fa-solid fa-magnifying-glass"></i></p>
                     </div>
                 </div>
                 <div class="d-flex w-100 justify-content-center mt-3 mb-2">
@@ -36,41 +36,30 @@
         </div>
       </nav>
 
-
-      <div class="container text-center">
-        <div class="row" id="recetasPollo">
-            
-
-
-        </div>
-
-
-        <div class="row" id="recetasCarne">
-    
-        </div>
-
-        <div class="row" id="recetasPescado">
-    
-        </div>
+      <div class="container text-center" id="contenedorRecetas">
+        <div class="row" id="recetasPollo"></div>
+        <div class="row" id="recetasCarne"></div>
+        <div class="row" id="recetasPescado"></div>
       </div>
-
+      <!-- Muestra resultados de la busqueda por nombre desde el input -->
+      <div class="container" id="resultadosBusqueda">
+        <h2 id="tituloResultados"></h2>
+        <div class="row text-center h5" id="cardResultados"></div>
+      </div>
+      <!--  -->
       <footer class="derechos__reservados">
             <div class="d-flex justify-content-center my-3">
                 <div class="mx-3 ">
-                    Cortes <br>
-                    Jose
+                    Cortes <br>Jose
                 </div>
                 <div class="mx-3">
-                    Cortes <br>
-                    Jose
+                    Cortes <br>Jose
                 </div>
                 <div class="mx-3">
-                    Cortes <br>
-                    Jose
+                    Cortes <br>Jose
                 </div>
                 <div class="mx-3">
-                    Cortes <br>
-                    Jose
+                    Reyna <br>López
                 </div>
 
             </div>
