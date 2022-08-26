@@ -13,6 +13,109 @@ export const searchByName = () => {
     ) : null
   })
 }
+
+const getIngredient =(food)=>{
+  let ingredientesKey = Object.keys(food).filter(key=> key.includes("strIngredient")  )
+  let ingredientesCantidad = Object.keys(food).filter(key=>  key.includes("strMeasure") )
+  let ingredienteExistentes = {}
+  for(let i =0;i<ingredientesKey.length;i++){
+    if(food[ingredientesKey[i]]!==""){
+      ingredienteExistentes[food[ingredientesKey[i]]]=food[ingredientesCantidad[i]]
+    }
+  }
+  return ingredienteExistentes
+}
+
+const createListIngredient = (ingredients)=>{
+  let strListIngrediente =`  <ul class="list-group list-group-flush">`
+  for(let ingredient in ingredients ){
+    strListIngrediente+=`<li class="list-group-item"> ${ingredient} -- ${ingredients[ingredient]} </li>`
+  }
+  strListIngrediente+=`</ul>`
+  return strListIngrediente
+}
+
+const createDetailsFood =(food,strListIngrediente)=>{
+
+  let str_food=`
+  <figure class="banner">
+      <img
+          src=${food.strMealThumb}
+          alt="Banner-meal"
+      />
+      <h1>${food.strMeal}</h1>
+
+      <div class="grid-container-information">
+          <div class="category">
+              <p>
+                  🍽️
+              </p>
+          </div>
+          <div class="information-area">
+              <p>
+                  🌎
+              </p>
+          </div>
+          <div class="information-tags">
+              <p>
+                  🏷️
+              </p>
+          </div>
+          <div class="information-youtube">
+              <a href="#">
+                  <img src="./assets/icons/youtube.svg" alt="">
+              </a>
+          </div>
+      </div>
+  </figure>
+  <div class="container-ingredient">
+      <div class="ingredients-list">
+          <h1 class="text-center">
+              INGREDIENTES
+          </h1>
+          <div>
+          ${strListIngrediente}
+          </div>
+      </div>
+      <div class="image-meal">
+          <img
+              src=${food.strMealThumb}
+              alt=${food.strMeal}
+          />
+      </div>
+  </div>
+  <div class="container my-4">
+  <div class="row">
+      <div class="col-12">
+          <h1 class="text-center">
+              INSTRUCCIONES
+          </h1>
+      </div>   
+      <div class="col-12">
+      ${food.strInstructions}
+      </div>
+  </div>
+`
+  return str_food
+}
+
+export const searchRandomFood=()=>{
+  const buttonRandomFood = document.getElementById("foodRandom");
+
+  buttonRandomFood.addEventListener('click',()=>{
+    fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+    .then(res => res.json())
+    .then(data => {
+      let food = data["meals"][0]
+      let ingredient = getIngredient(food)
+      let strListIngrediente = createListIngredient(ingredient)
+      let main  = document.getElementById("main")
+      let str_food = createDetailsFood(food,strListIngrediente)
+      main.innerHTML=str_food;
+    })
+  })
+
+}
 // muestra recetas que coincidan con la búsqueda después de dar enter
 const showData = data => {
   const { meals } = data
