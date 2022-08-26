@@ -96,6 +96,11 @@ footer {
   color: rgba(255, 255, 255, 1);
 }
 
+.regresar{
+
+  text-decoration: none;
+}
+
 @media (max-width: 576px) {
   .navbar__recetas {
     height: auto;
