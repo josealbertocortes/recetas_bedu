@@ -1,5 +1,5 @@
-import {searchByCategory, searchByName} from './utils.js'
-
+import {searchByCategory, searchByName, searchRandomFood} from './utils.js'
+searchRandomFood()
 searchByName()
 searchByCategory("recetasPollo", "Chicken", "Recetas con pollo")
 searchByCategory("recetasCarne", "Beef", "Recetas con carne")
