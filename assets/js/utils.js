@@ -209,7 +209,7 @@ const showData = data => {
 
 //busqueda de comida por categoria 
 export  const searchByCategory = (id, category, mainTitle) => {
-    let str_text = `<h1 class="mt-2">${mainTitle}</h1>`;
+    let str_text = `<h1 class="mt-2 font-courgette">${mainTitle}</h1>`;
     fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=" + category)
       .then((res) => res.json())
       .then((data) => {
@@ -248,7 +248,7 @@ export  const searchByCategory = (id, category, mainTitle) => {
                   </div>
               </div>
           </div>
-          <p class="mt-2">${titulo_text} </p>
+          <p class="mt-2 font-courgette">${titulo_text} </p>
       </div>
       `;
     return card;
