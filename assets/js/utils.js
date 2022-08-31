@@ -171,9 +171,11 @@ const showData = data => {
   const cardResultados = document.getElementById('main')
 
   let strSearch = `
-
-<h2 class="text-center aling" id="tituloResultados"> Resultados para '${inputSearch.value}' </h2>
-<a href="/" class="boton__search__random regresar my-2 ms-2" >Inicio</a> 
+<div id="ruta">
+  <a href="/">Inicio > </a> 
+  <a href="#" style="color:#f39b17;"> Busqueda</a> 
+  </div>
+  <h2 class="text-center aling m-3" id="tituloResultados"> Resultados para '${inputSearch.value}' </h2>
     <div class="container">
         <div class="row text-center h5" id="cardResultados">
   `
