@@ -12,6 +12,33 @@ footer {
   margin: 0;
 }
 
+@font-face {
+  font-family: "Cookie";
+  src: url("../fonts/Cookie-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Courgette";
+  src: url("../fonts/Courgette-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Corinthia";
+  src: url("../fonts/Corinthia.ttf");
+}
+
+.font-coockie{
+  font-family: "Cookie",serif;
+}
+
+.font-courgette{
+  font-family: "Courgette",serif;
+}
+
+.font-corinthia{
+  font-family: "Corinthia",serif;
+}
+
 ::-webkit-input-placeholder {
   text-align: center;
 }
