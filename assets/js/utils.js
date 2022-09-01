@@ -45,59 +45,65 @@ const getIngredient = (food) => {
         food[ingredientesCantidad[i]];
     }
   }
-  return ingredienteExistentes;
-};
+
+  return ingredienteExistentes
+}
 
 //creacion de html que muestra los ingredientes
-const createListIngredient = (ingredients) => {
-  let strListIngrediente = `  <ul class="list-group list-group-flush">`;
-  for (let ingredient in ingredients) {
-    strListIngrediente += `<li class="list-group-item"> ${ingredient} -- ${ingredients[ingredient]} </li>`;
+const createListIngredient = (ingredients)=>{
+  let strListIngrediente =`<table class="table">\n<thead>\n<tr>\n<th scope="col">Ingredientes</th>\n<th scope="col">Cantidades</th>\n</thead>\n<tbody>`
+  for(let ingredient in ingredients ){
+    strListIngrediente+=`<tr><td>${ingredient}</td><td>${ingredients[ingredient]}</td>`
   }
-  strListIngrediente += `</ul>`;
-  return strListIngrediente;
-};
+  strListIngrediente+=`</table>`
+  return strListIngrediente
+}
 
-//creacion del html que muestra el detalle de la comida
-const createDetailsFood = (food, strListIngrediente) => {
-  let str_food = `
+//creacion del html que muestra el detalle de la comida 
+const createDetailsFood =(food,strListIngrediente)=>{
+  let str_food=`
+  <div id="ruta">
+  <a href="/">Inicio > </a> 
+  <a href="#" style="color:#f39b17;"> ${food.strMeal}</a> 
+  </div>
   <figure class="banner">
       <img
           src=${food.strMealThumb}
           alt="Banner-meal"
       />
       <h1>${food.strMeal}</h1>
-
-      <div class="grid-container-information">
+  </figure>
+  <div class="grid-container-information">
           <div class="category">
+              <img src="./assets/icons/maceta.svg" alt="icon-youtube">
               <p>
-                  🍽️ ${food.strCategory}
+                  ${food.strCategory}
               </p>
           </div>
           <div class="information-area">
+              <img src="./assets/icons/mundial.svg" alt="icon-youtube">
               <p>
-                  🌎 ${food.strArea}
+                  ${food.strArea}
               </p>
           </div>
           <div class="information-tags">
+              <img src="./assets/icons/tag.svg" alt="icon-youtube">
               <p>
+
                   🏷️ ${food.strTags || "No tags"}
               </p>
           </div>
           <div class="information-youtube">
               <a href="${food.strYoutube}">
                   <img src="./assets/icons/youtube.svg" alt="">
+
               </a>
           </div>
-      </div>
-  </figure>
-  <div class="m-0 p-0">
-  <a href="/" class="boton__search__random regresar my-2 ms-2" >Inicio</a> 
   </div>
+  
   <div class="container">
   <div class="row">
-    
-      <div class="col">
+      <div class="col" id="ingredient">
       <h1 class="text-center">
           INGREDIENTES
       </h1>
@@ -113,7 +119,7 @@ const createDetailsFood = (food, strListIngrediente) => {
     </div>
     </div>
   </div>
-  <div class="container my-4">
+  <div class="container-instructions">
   <div class="row">
       <div class="col-12">
           <h1 class="text-center">
@@ -166,9 +172,11 @@ const showData = (data) => {
   const cardResultados = document.getElementById("main");
 
   let strSearch = `
-
-<h2 class="text-center aling" id="tituloResultados"> Resultados para '${inputSearch.value}' </h2>
-<a href="/" class="boton__search__random regresar my-2 ms-2" >Inicio</a> 
+<div id="ruta">
+  <a href="/">Inicio > </a> 
+  <a href="#" style="color:#f39b17;"> Busqueda</a> 
+  </div>
+  <h2 class="text-center aling m-3" id="tituloResultados"> Resultados para '${inputSearch.value}' </h2>
     <div class="container">
         <div class="row text-center h5" id="cardResultados">
   `;

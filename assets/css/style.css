@@ -12,6 +12,9 @@ footer {
   margin: 0;
 }
 
+a { text-decoration: none; 
+  color: black;}
+
 @font-face {
   font-family: "Cookie";
   src: url("../fonts/Cookie-Regular.ttf");
@@ -126,6 +129,10 @@ footer {
 .regresar{
 
   text-decoration: none;
+}
+
+#ruta{
+  margin: 5px 20px;
 }
 
 @media (max-width: 576px) {
