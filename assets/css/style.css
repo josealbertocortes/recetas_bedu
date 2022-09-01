@@ -60,10 +60,11 @@ a { text-decoration: none;
 
 .titulo__recetas {
   color: #7a3300;
+  font-size: 60px;
 }
 
 .navbar__recetas {
-  height: 150px;
+  height: 165px;
   background-color: #f39b17;
 }
 
@@ -93,6 +94,7 @@ a { text-decoration: none;
 }
 
 .boton__search__random{
+font-size: 20px;
  border: none;
  margin: 0;
  padding: 0;
@@ -126,6 +128,14 @@ a { text-decoration: none;
   color: rgba(255, 255, 255, 1);
 }
 
+.banner {
+  animation: fadeIn 2s ease;
+}
+
+.container{
+  animation: fadeIn 2s ease;
+}
+
 .regresar{
 
   text-decoration: none;
@@ -144,5 +154,20 @@ a { text-decoration: none;
   }
   .boton__search__recetas {
     display: none;
+  }
+}
+
+@keyframes fadeIn {
+  0% { 
+      opacity: 0;
+      filter: brightness(0.5) blur(15px);
+  }
+  10% {
+      opacity: 1;
+      filter: brightness(1) blur(10px);
+  }
+  20% {
+      opacity: 1;
+      filter: brightness(1.5) blur(5px);
   }
 }
