@@ -1,6 +1,6 @@
 import {searchByCategory, searchByName, searchRandomFood} from './utils.js'
-//import '../css/style.css'
-//import '../css/stylemeal.css'
+import '../css/style.css'
+import '../css/stylemeal.css'
 
 (function main(){
     searchRandomFood()
